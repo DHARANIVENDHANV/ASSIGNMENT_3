@@ -31,11 +31,24 @@ y=f
 
 ## building a RNN model
 
-1. Preprocess the data:
+1.System Requirements:
+
+To run the RNN model for neural machine transliteration, the system requirements are as follows:
+
+1.1 Python: Make sure you have Python 3.x installed on your system.
+
+1.2 PyTorch: The model implementation utilizes the PyTorch library for building and training the RNN models. Install PyTorch by following the instructions provided on the official PyTorch website (https://pytorch.org) based on your system configuration.
+
+1.3 Dependencies: Install the required dependencies by running the following command:
 
    ```bash
-   python preprocess.py --input data/english.txt --output data/hindi.txt
+   pip install -r requirements.txt
    ```
+
+1.4 Dataset: Download the English-Hindi transliteration dataset and place it in the specified data directory. Make sure the dataset is appropriately preprocessed before training the model.
+
+
+For any additional questions or clarifications, please refer to the project documentation or contact the project author.
 
 2. Train the model:
 
