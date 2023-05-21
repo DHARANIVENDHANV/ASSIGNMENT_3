@@ -31,7 +31,7 @@ y=f
 
 ## building a RNN model
 
-1.System Requirements:
+###1.System Requirements:
 
 To run the RNN model for neural machine transliteration, the system requirements are as follows:
 
@@ -46,7 +46,7 @@ To run the RNN model for neural machine transliteration, the system requirements
 
 1.4 Dataset: Download the English-Hindi transliteration dataset and place it in the specified data directory. Make sure the dataset is appropriately preprocessed before training the model.
 
-2. Train the model:
+###2.Train the model:
 for loss and accuracy for training and validation datasets wandb framework is used.To findout the best hyperparameter bayesian search is employed for sweeps. The sweep configuration and default configurations of hyperparameters are specficied as follows:
 
    ```bash
@@ -82,9 +82,9 @@ for loss and accuracy for training and validation datasets wandb framework is us
             'values': ['RNN', 'LSTM', 'GRU']
         }
     }
-}```
 
-3.Hyperparameter sweeps
+
+###3.Hyperparameter sweeps
 Two self-contained Colab notebooks are provided for running the RNN model for neural machine transliteration. These notebooks are designed to be executed on a GPU-based 'CUDA' runtime session in Colab. The notebooks include all the necessary code and configurations, and the results will be logged automatically to the user's wandb account. Before starting the run, the user needs to update their wandb account details in the notebook. This allows for easy tracking and visualization of training progress and evaluation metrics using the wandb platform. Simply open the notebooks in Colab, update the wandb account information, and run the cells to train and evaluate the RNN model for transliteration. The notebooks are optimized for GPU acceleration and provide a convenient and interactive environment for running the model.
 
 ## Results
