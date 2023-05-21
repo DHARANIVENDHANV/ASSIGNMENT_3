@@ -83,7 +83,7 @@ for loss and accuracy for training and validation datasets wandb framework is us
             'values': ['RNN', 'LSTM', 'GRU']
         }
     }
-
+```
 
 ### 3.Hyperparameter sweeps
 
