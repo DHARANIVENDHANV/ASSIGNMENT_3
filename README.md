@@ -35,25 +35,56 @@ y=f
 
 To run the RNN model for neural machine transliteration, the system requirements are as follows:
 
-1.1 Python: Make sure you have Python 3.x installed on your system.
+ 1.1 Python: Make sure you have Python 3.x installed on your system.
 
-1.2 PyTorch: The model implementation utilizes the PyTorch library for building and training the RNN models. Install PyTorch by following the instructions provided on the official PyTorch website (https://pytorch.org) based on your system configuration.
+ 1.2 PyTorch: The model implementation utilizes the PyTorch library for building and training the RNN models. Install PyTorch by following the instructions provided on the official PyTorch website (https://pytorch.org)    based on your system configuration.
 
-1.3 Dependencies: Install the required dependencies by running the following command:
+ 1.3 Dependencies: Install the required dependencies by running the following command:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-1.4 Dataset: Download the English-Hindi transliteration dataset and place it in the specified data directory. Make sure the dataset is appropriately preprocessed before training the model.
+ 1.4 Dataset: Download the English-Hindi transliteration dataset and place it in the specified data directory. Make sure the dataset is appropriately preprocessed before training the model.
 
-
-For any additional questions or clarifications, please refer to the project documentation or contact the project author.
 
 2. Train the model:
+   for loss and accuracy for training and validation datasets wandb framework is used.To findout the best hyperparameter bayesian search is employed for sweeps. The sweep configuration and default configurations of hyperparameters are specficied as follows:
 
    ```bash
-   python train.py --source data/english.txt --target data/hindi.txt --epochs 20 --batch_size 64
+   sweep_config = {
+    'method': 'bayes', 
+    'metric': {
+        'name': 'valid_acc',
+        'goal': 'maximize'
+    },
+    'parameters': {
+        'optimizer': {
+            'values': ['SGD', 'Adam', 'RMSprop', 'NAdam']
+        },
+        'learning_rate': {
+            'values': [1e-4, 5e-4, 0.001, 0.005, 0.01]
+        },
+        'epochs': {
+            'values': [5, 10, 15, 20]
+        },
+        'hid_layers': {
+            'values': [1, 2, 3, 4]
+        },
+        'emb_size': {
+            'values': [64, 128, 256, 512]
+        },
+        'hidden_size': {
+            'values': [64, 128, 256, 512]
+        },
+        'dropout': {
+            'values': [0, 0.1, 0.2, 0.3, 0.4]
+        },
+        'type_t': {
+            'values': ['RNN', 'LSTM', 'GRU']
+        }
+    }
+}
    ```
 
 3. Evaluate the model:
