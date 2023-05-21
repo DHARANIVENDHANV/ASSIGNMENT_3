@@ -35,17 +35,13 @@ y=f
 
 To run the RNN model for neural machine transliteration, the system requirements are as follows:
 
- 1.1 Python: Make sure you have Python 3.x installed on your system.
-
- 1.2 PyTorch: The model implementation utilizes the PyTorch library for building and training the RNN models. Install PyTorch by following the instructions provided on the official PyTorch website (https://pytorch.org)    based on your system configuration.
-
- 1.3 Dependencies: Install the required dependencies by running the following command:
-
+1.1 Python: Make sure you have Python 3.x installed on your system.
+1.2 PyTorch: The model implementation utilizes the PyTorch library for building and training the RNN models. Install PyTorch by following the instructions provided on the official PyTorch website (https://pytorch.org)    based on your system configuration.
+1.3 Dependencies: Install the required dependencies by running the following command:
    ```bash
    pip install -r requirements.txt
    ```
-
- 1.4 Dataset: Download the English-Hindi transliteration dataset and place it in the specified data directory. Make sure the dataset is appropriately preprocessed before training the model.
+1.4 Dataset: Download the English-Hindi transliteration dataset and place it in the specified data directory. Make sure the dataset is appropriately preprocessed before training the model.
 
 
 2. Train the model:
@@ -86,66 +82,15 @@ To run the RNN model for neural machine transliteration, the system requirements
     }
 }
    ```
-
-3. Evaluate the model:
-
-   ```bash
-   python evaluate.py --model models/model.pth --source data/english_test.txt --target data/hindi_test.txt
-   ```
-
-4. Transliterate new input:
-
-   ```bash
-   python transliterate.py --model models/model.pth --input "Hello, world!"
-   ```
-
-## Model Configuration
-
-The model architecture, including the number of layers, hidden units, and attention mechanism, can be configured by modifying the `config.py` file.
+ 3.Hyperparameter sweeps
+ Two self-contained Colab notebooks are provided for running the RNN model for neural machine transliteration. These notebooks are designed to be executed on a GPU-based 'CUDA' runtime session in Colab. The notebooks include all the necessary code and configurations, and the results will be logged automatically to the user's wandb account. Before starting the run, the user needs to update their wandb account details in the notebook. This allows for easy tracking and visualization of training progress and evaluation metrics using the wandb platform. Simply open the notebooks in Colab, update the wandb account information, and run the cells to train and evaluate the RNN model for transliteration. The notebooks are optimized for GPU acceleration and provide a convenient and interactive environment for running the model.
 
 ## Results
 
 The model achieves an accuracy of X% on the validation set and demonstrates good performance in transliterating English words to Hindi.
 
-## Contributing
-
-Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
-## Acknowledgments
-
-This implementation is based on the work by [reference paper or author].
-
 ## References
+[PYTORCH-blog](https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html) for understanding to build neural sequence-to-sequence models.
 
-[Include any relevant papers or articles here]
 
-Please refer to the [Wiki](https://github.com/your-username/neural-machine-transliteration/wiki) for more detailed information on the project and its components.
 
-## Authors
-
-- [Your Name](https://github.com/your-username)
-
-Feel free to contact the author with any questions or inquiries.
-
-## Release History
-
-- 0.1.0
-  - Initial release
-
-## TODO
-
-- [ ] Add visualization of attention weights
-- [ ] Improve handling of out-of-vocabulary words
-- [ ] Add support for other languages
-
-## FAQ
-
-[Include any frequently asked questions here]
-
-For a more detailed explanation of the project and its components, please refer to the [project documentation](https://github.com/your-username/neural-machine-transliteration/blob/main/docs/README.md).
-
-**Note:** It is important to ensure that you have sufficient computational resources for training the model, as it may require significant memory and processing power depending on the size of the dataset and the chosen model configuration.
