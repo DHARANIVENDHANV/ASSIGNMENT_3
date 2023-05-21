@@ -82,8 +82,8 @@ for loss and accuracy for training and validation datasets wandb framework is us
             'values': ['RNN', 'LSTM', 'GRU']
         }
     }
-}
-   ```
+}```
+
 3.Hyperparameter sweeps
 Two self-contained Colab notebooks are provided for running the RNN model for neural machine transliteration. These notebooks are designed to be executed on a GPU-based 'CUDA' runtime session in Colab. The notebooks include all the necessary code and configurations, and the results will be logged automatically to the user's wandb account. Before starting the run, the user needs to update their wandb account details in the notebook. This allows for easy tracking and visualization of training progress and evaluation metrics using the wandb platform. Simply open the notebooks in Colab, update the wandb account information, and run the cells to train and evaluate the RNN model for transliteration. The notebooks are optimized for GPU acceleration and provide a convenient and interactive environment for running the model.
 
