@@ -26,10 +26,10 @@ y=f
 ^
 ​
 (x)
- which takes as input a romanized string (ghar) and produces the corresponding word in Devanagari (घर). 
+ which takes as input a romanized string (ghar) and produces the corresponding word in Devanagari (घर).Refer this [blog](https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html) for pytorch for understanding 
 
 
-## Usage
+## building a RNN model
 
 1. Preprocess the data:
 
