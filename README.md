@@ -5,23 +5,29 @@ This repository contains an implementation of a character-level neural machine t
 
 ## Overview
 
-The transliteration model consists of an encoder-decoder architecture with an attention mechanism. The encoder processes the input English sequence, while the decoder generates the corresponding Hindi transliteration character by character. The attention mechanism allows the decoder to focus on different parts of the input sequence during the generation process.
+The transliteration model consists of an encoder-decoder architecture with and without attention mechanism. The encoder processes the input English sequence, while the decoder generates the corresponding Hindi transliteration character by character. The attention mechanism allows the decoder to focus on different parts of the input sequence during the generation process.
+link to wandb report ()
 
-## Installation
+## Dataset
+the [Aksharantar](https://drive.google.com/file/d/1uRKU4as2NlS9i8sdLRS1e326vQRdhvfw/view?pli=1) dataset released by AI4Bharat was used in the project.This dataset contains pairs of the following form: 
+xx x,yy y
+ajanabee,अजनबी
+i.e., a word in the native script and its corresponding transliteration in the Latin script (how we type while chatting with our friends on WhatsApp etc). Given many such (xi,yi)i=1n(x_i, y_i)_{i=1}^n
+(xi
+​
+,yi
+​
+)i=1
+n
+​
 
-1. Clone the repository:
+ pairs your goal is to train a model y=f^(x)y = \hat{f}(x)
+y=f
+^
+​
+(x)
+ which takes as input a romanized string (ghar) and produces the corresponding word in Devanagari (घर). 
 
-   ```bash
-   git clone https://github.com/your-username/neural-machine-transliteration.git
-   ```
-
-2. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Download the English-Hindi transliteration dataset and place it in the `data` directory.
 
 ## Usage
 
