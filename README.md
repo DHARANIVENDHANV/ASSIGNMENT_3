@@ -91,7 +91,7 @@ Two self-contained Colab notebooks are provided for running the RNN model for ne
 
 ## Results
 
-The model achieves an accuracy of X% on the validation set and demonstrates good performance in transliterating English words to Hindi.
+The model achieves an accuracy of 20.07% and 34.3% on the validation set for with and without attention respectively and demonstrates good performance in transliterating English words to Hindi.
 
 ## References
 
